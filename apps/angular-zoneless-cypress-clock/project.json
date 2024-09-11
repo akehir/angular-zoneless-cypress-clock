@@ -1,0 +1,89 @@
+{
+  "name": "angular-zoneless-cypress-clock",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/angular-zoneless-cypress-clock/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-zoneless-cypress-clock",
+        "index": "apps/angular-zoneless-cypress-clock/src/index.html",
+        "browser": "apps/angular-zoneless-cypress-clock/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular-zoneless-cypress-clock/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/angular-zoneless-cypress-clock/public"
+          }
+        ],
+        "styles": ["apps/angular-zoneless-cypress-clock/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular-zoneless-cypress-clock:build:production"
+        },
+        "development": {
+          "buildTarget": "angular-zoneless-cypress-clock:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "angular-zoneless-cypress-clock:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/angular-zoneless-cypress-clock/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "angular-zoneless-cypress-clock:build",
+        "port": 4200,
+        "staticFilePath": "dist/apps/angular-zoneless-cypress-clock/browser",
+        "spa": true
+      }
+    }
+  }
+}
