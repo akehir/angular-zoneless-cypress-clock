@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/angular-zoneless-cypress-clock",
         "index": "apps/angular-zoneless-cypress-clock/src/index.html",
         "browser": "apps/angular-zoneless-cypress-clock/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "apps/angular-zoneless-cypress-clock/tsconfig.app.json",
         "assets": [
           {

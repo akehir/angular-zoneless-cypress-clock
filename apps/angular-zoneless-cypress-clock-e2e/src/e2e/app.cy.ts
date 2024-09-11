@@ -1,7 +1,11 @@
 import { getGreeting } from '../support/app.po';
 
 describe('angular-zoneless-cypress-clock-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.clock(Date.now());
+    cy.visit('/')
+    cy.tick(1000);
+  });
 
   it('should display welcome message', () => {
     // Custom command example, see `../support/commands.ts` file
