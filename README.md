@@ -7,5 +7,5 @@ With Angular set to Zoneless, Angular doesn't render the DOM when cypress clock 
 
 ```
 npm i
-npm e2e
+npm run demo
 ```

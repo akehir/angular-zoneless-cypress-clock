@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "nx": "nx",
     "start": "nx serve --project angular-zoneless-cypress-clock",
     "test": "nx open-cypress angular-zoneless-cypress-clock-e2e",
-    "e2e": "nx e2e angular-zoneless-cypress-clock-e2e"
+    "demo": "nx e2e angular-zoneless-cypress-clock-e2e"
   },
   "private": true,
   "dependencies": {
