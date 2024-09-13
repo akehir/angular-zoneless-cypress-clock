@@ -15,12 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - run: pwd
+
       - run: ls -la
+
+      - run: cd .. && ls -la 
 
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
-          cache-dependency-path: angular-zoneless-cypress-clock/package-lock.json
+          cache-dependency-path: ../package-lock.json
           node-version: 20
           cache: 'npm'
 
