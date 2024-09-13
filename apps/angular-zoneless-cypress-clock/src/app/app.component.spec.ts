@@ -8,7 +8,8 @@ import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterModule.forRoot([])],
+      declarations: [AppComponent],
+      imports: [NxWelcomeComponent, RouterModule.forRoot([])],
       providers: [provideExperimentalZonelessChangeDetection()],
     }).compileComponents();
   });
