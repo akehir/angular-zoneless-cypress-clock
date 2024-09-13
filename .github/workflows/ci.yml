@@ -18,7 +18,7 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: angular-zoneless-cypress-clock/package-lock.json
           node-version: 20
           cache: 'npm'
 
