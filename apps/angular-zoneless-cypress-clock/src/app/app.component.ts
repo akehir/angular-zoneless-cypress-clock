@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
-  standalone: true,
-  imports: [RouterModule],
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: [],
 })
 export class AppComponent {
   title = 'angular-zoneless-cypress-clock';
